@@ -1,0 +1,16 @@
+{
+    "build": "./build.js",
+    "ignore": [
+        "node_modules/",
+        "build/",
+        "images/_temp/",
+        "*.js",
+        "templates/"
+    ],
+    "development": {
+        "publicPath": "http://10.151.30.28/static/f2e/park/"
+    },
+    "production": {
+        "publicPath": "//static.tcredit.com/park/"
+    }
+}

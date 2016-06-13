@@ -1,0 +1,29 @@
+{
+  "name": "park",
+  "version": "1.0.0",
+  "description": "park",
+  "scripts": {
+    "validate_filename": "node validate_filename.js `git diff --staged --name-only --diff-filter=ACMRTU`",
+    "csslint": "files=`git diff --staged --name-only --diff-filter=ACMRTU | grep -ie '\\.css$'`; if [ \"${files:=empty}\" != \"empty\" ]; then csslint --quiet $files; fi",
+    "eslint": "files=`git diff --staged --name-only --diff-filter=ACMRTU | grep -ie '\\.js$'`; if [ \"${files:=empty}\" != \"empty\" ]; then eslint -c .eslintrc.json $files; fi",
+    "build": "node ./node_modules/requirejs/bin/r.js -o build.js"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run validate_filename && npm run csslint && npm run eslint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.tcredit.com/f2e/park.git"
+  },
+  "keywords": [],
+  "author": "f2e",
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "ghooks": "^1.0.3"
+  },
+  "dependencies": {
+    "requirejs": "^2.2.0"
+  }
+}

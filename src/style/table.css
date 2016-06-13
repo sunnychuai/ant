@@ -1,0 +1,35 @@
+.table_wrap {
+  padding: 20px 0 35px 0;
+  border-top: 1px solid #4A4A4A;
+  border-bottom: 1px solid #4A4A4A;
+}
+
+.table_hd {
+  margin-top: 20px;
+  padding: 0 10px 0 20px;
+}
+
+.table {
+  width: 100%;
+  font-size: 12px;
+}
+.table th, .table td {
+  padding: 10px;
+  box-sizing: border-box;
+}
+.table th {
+  border-right: 4px solid #fff;
+  border-bottom: 1px solid #E5E5E5;
+}
+.table td {
+  border-bottom: 1px dashed #E5E5E5;
+}
+
+.tools_item {
+  display: inline-block;
+  margin-left: 20px;
+  color: #B6C1F6;
+}
+.tools_item:first-child {
+  margin-left: 0;
+}

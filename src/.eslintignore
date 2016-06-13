@@ -1,0 +1,7 @@
+/js/lib/
+/build/
+/test/
+/build.js
+
+# 忽略vm的模拟数据
+/*.js

@@ -1,0 +1,40 @@
+{
+  "name": "demurge",
+  "version": "0.0.1",
+  "description": "A module creator for front-end development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunnychuai/demiurge.git"
+  },
+  "keywords": [
+    "demurge"
+  ],
+  "author": "sunnychuai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunnychuai/demiurge/issues"
+  },
+  "homepage": "https://github.com/sunnychuai/demiurge#readme",
+  "dependencies": {},
+  "peerDependencies": {
+    "gulp": ">=3.5.0"
+  },
+  "devDependencies": {
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.2",
+    "tiny-lr": "^0.2.1"
+  }
+}

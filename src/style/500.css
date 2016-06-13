@@ -1,0 +1,39 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font: 14px/1.5 '微软雅黑', arial, sans-serif;
+}
+
+.error_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 580px;
+  margin-top: -290px;
+  margin-left: -450px;
+}
+
+.error_msg {
+  position: relative;
+  height: 580px;
+  padding: 195px 0 0 500px;
+  background: url(../images/500.png) no-repeat 40px center;
+  box-sizing: border-box;
+  color: #8D8D8D;
+}
+.error_msg span {
+  display: block;
+}
+
+.error_title {
+  font-size: 60px;
+  line-height: 98px;
+}
+
+.error_text {
+  margin-top: 10px;
+  font-size: 24px;
+}

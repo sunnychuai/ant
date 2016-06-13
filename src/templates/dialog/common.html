@@ -1,0 +1,13 @@
+<div>
+    <div class="overlay"></div>
+
+    <div class="dialog dialog_tip">
+        <a href="#close" class="dialog_btn dialog_close" data-action="close" title="关闭">&times;</a>
+
+        <h2 class="dialog_hd">{{title || '系统提示'}}</h2>
+        
+        <div class="dialog_tip_bd">
+            <p class="dialog_tip_{{type || 'success'}}">{{#message}}</p>
+        </div>
+    </div>
+</div>
