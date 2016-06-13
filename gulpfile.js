@@ -24,94 +24,25 @@ var gulp    = require('gulp'),                 //基础库
     livereload = require('gulp-livereload'),   //livereload
     map = require('map-stream');
 
-// HTML处理(gulp html 成功)
-gulp.task('html', function() {
-    var htmlSrc = './src/*.html',
-        htmlDst = './dist/';
+// copy
+gulp.task('copy', function() {
+    var copySrc = './src/**/*.*',
+        copyDst = './dist/';
 
-    gulp.src(htmlSrc)
+    gulp.src(copySrc,{dot: true})
         .pipe(livereload(server))
-        .pipe(gulp.dest(htmlDst))
+        .pipe(gulp.dest(copyDst))
 });
 
-// 样式处理（gulp css 成功）
-gulp.task('css', function () {
-    var cssSrc = './src/style/*.css',
-        cssDst = './dist/style';
-
-    gulp.src(cssSrc)
-        .pipe(livereload(server))
-        .pipe(gulp.dest(cssDst));
-});
-
-// 图片处理（gulp images 成功）
-gulp.task('images', function(){
-    var imgSrc = './src/images/**/*',
-        imgDst = './dist/images';
-    gulp.src(imgSrc)
-        .pipe(livereload(server))
-        .pipe(gulp.dest(imgDst));
-})
-
-// js处理（gulp js 成功）
-gulp.task('js', function () {
-    var jsSrc = './src/js/*.js',
-        jsDst ='./dist/js';
-
-    gulp.src(jsSrc)
-        .pipe(livereload(server))
-        .pipe(gulp.dest(jsDst))
-});
-
-// font_awesome处理（gulp font_awesome 成功）
-gulp.task('font', function () {
-    var fontSrc = './src/font_awesome/**/*',
-        fontDst ='./dist/font_awesome';
-
-    gulp.src(fontSrc)
-        .pipe(livereload(server))
-        .pipe(gulp.dest(fontDst))
-});
-
-// inc处理（gulp inc 成功）
-gulp.task('inc', function () {
-    var incSrc = './src/inc/**/*.html',
-        incDst ='./dist/inc';
-
-    gulp.src(incSrc)
-        .pipe(livereload(server))
-        .pipe(gulp.dest(incDst))
-});
-
-// templates处理（gulp tmp 成功）
-gulp.task('tmp', function () {
-    var tmpSrc = './src/templates/**/*.html',
-        tmpDst ='./dist/templates';
-
-    gulp.src(tmpSrc)
-        .pipe(livereload(server))
-        .pipe(gulp.dest(tmpDst))
-});
-
-// mock处理（gulp mock 成功）
-gulp.task('mock', function () {
-    var mockSrc = './src/mock/*',
-        mockDst ='./dist/mock';
-
-    gulp.src(mockSrc)
-        .pipe(livereload(server))
-        .pipe(gulp.dest(mockDst))
-});
-
-// 清空图片、样式、js（gulp clean 成功）
+// 清空
 gulp.task('clean', function() {
-    gulp.src(['./dist/*.html', './dist/css', './dist/images', './dist/js', './dist/font_awesome', './dist/inc', './dist/templates', './dist/mock'], {read: false})
+    gulp.src(['./dist/**/*.*'], {read: false})
         .pipe(clean());
 });
 
-// 默认任务 清空图片、样式、js并重建 运行语句 gulp
+// 默认任务 清空并重建 运行语句 gulp
 gulp.task('default', ['clean'], function(){
-    gulp.start('html','css','images','js','font','font','inc','tmp');
+    gulp.start('copy');
 });
 
 // 监听任务 运行语句 gulp watch
@@ -123,44 +54,9 @@ gulp.task('watch',function(){
         }
 
         // 监听html
-        gulp.watch('./src/*.html', function(event){
-            gulp.run('html');
+        gulp.watch('./src/**/*.*', function(event){
+            gulp.run('copy');
         })
-
-        // 监听css
-        gulp.watch('./src/css/*.css', function(){
-            gulp.run('css');
-        });
-
-        // 监听images
-        gulp.watch('./src/images/**/*', function(){
-            gulp.run('images');
-        });
-
-        // 监听js
-        gulp.watch('./src/js/*.js', function(){
-            gulp.run('js');
-        });
-
-        // 监听font
-        gulp.watch('./src/font_awesome/**/*', function(){
-            gulp.run('font');
-        });
-
-        // 监听inc
-        gulp.watch('./src/inc/**/*.html', function(){
-            gulp.run('inc');
-        });
-
-        // 监听tmp
-        gulp.watch('./src/templates/**/*.html', function(){
-            gulp.run('tmp');
-        });
-
-        // 监听mock
-        gulp.watch('./src/mock/*', function(){
-            gulp.run('mock');
-        });
 
     });
 });

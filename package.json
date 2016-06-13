@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sunnychuai/demiurge.git"
+    "url": "git+https://github.com/sunnychuai/ant.git"
   },
   "keywords": [
     "demurge"
@@ -16,14 +16,11 @@
   "author": "sunnychuai",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sunnychuai/demiurge/issues"
+    "url": "https://github.com/sunnychuai/ant/issues"
   },
-  "homepage": "https://github.com/sunnychuai/demiurge#readme",
-  "dependencies": {},
-  "peerDependencies": {
-    "gulp": ">=3.5.0"
-  },
-  "devDependencies": {
+  "homepage": "https://github.com/sunnychuai/ant#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
     "gulp-imagemin": "^3.0.1",
@@ -36,5 +33,11 @@
     "gulp-util": "^3.0.7",
     "jshint": "^2.9.2",
     "tiny-lr": "^0.2.1"
+  },
+  "peerDependencies": {
+    
+  },
+  "devDependencies": {
+    
   }
 }
